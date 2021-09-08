@@ -5,6 +5,7 @@ const characters = {
   state: {
     characters: [],
     character: {},
+    images: [],
     loading: false,
   },
   mutations: {
@@ -13,6 +14,9 @@ const characters = {
     },
     GET_ALL_CHARACTERS(state, payload) {
       state.characters = payload;
+    },
+    GET_ALL_CHARACTERS_IMAGES(state, payload) {
+      state.images = payload;
     },
     GET_CHARACTER_BY_ID(state, payload) {
       state.character = payload;
@@ -24,6 +28,15 @@ const characters = {
       const result = await api.getAllChacters(pageId);
       context.commit("SET_LOADING_STATUS", false);
       context.commit("GET_ALL_CHARACTERS", result.data.data.characters);
+    },
+    async getChactersImages(context) {
+      context.commit("SET_LOADING_STATUS", true);
+      const result = await api.getChactersImages();
+      context.commit("SET_LOADING_STATUS", false);
+      context.commit(
+        "GET_ALL_CHARACTERS_IMAGES",
+        result.data.data.characters.results
+      );
     },
     async getChacterById(context, id) {
       context.commit("SET_LOADING_STATUS", true);

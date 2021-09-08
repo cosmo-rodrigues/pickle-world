@@ -56,7 +56,7 @@ h1 {
 header {
   height: 17vh;
 }
-head > div {
+header > div {
   flex-flow: row wrap !important;
 }
 img {

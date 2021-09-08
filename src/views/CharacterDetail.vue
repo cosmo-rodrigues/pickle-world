@@ -9,13 +9,13 @@
             {{ character.name }} is {{ character.species }} who lives on
             {{ character.location?.name }}, a
             {{ character.location?.type }} with
-            {{ character.location?.residents.length }} habitants, at
+            {{ character.location?.residents?.length }} habitants, at
             {{ character.location?.dimension }}.
           </p>
           <p>
             Originaly this character is from {{ character.origin?.name }}, a
             {{ character.origin?.type }} with
-            {{ character.origin?.residents.length }} habitants.
+            {{ character.origin?.residents?.length }} habitants.
           </p>
           <p>Your current status is {{ character.status }}.</p>
         </div>

@@ -16,7 +16,7 @@
         </button>
       </div>
     </div>
-    <h5>Page {{ +info?.next - 1 }} from {{ info.pages }}</h5>
+    <h5>Page {{ +info?.next - 1 }} from {{ +info.pages }}</h5>
   </div>
 </template>
 <script>

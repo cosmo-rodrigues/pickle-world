@@ -82,6 +82,7 @@ export default {
   },
   mounted() {
     this.getAllChacters();
+    this.info = this.characters.characters?.info;
   },
   updated() {
     this.info = this.characters.characters?.info;

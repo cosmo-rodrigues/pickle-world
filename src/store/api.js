@@ -27,6 +27,22 @@ export function getAllChacters(pageId) {
   });
 }
 
+export function getChactersImages() {
+  return axios.post(API_URL, {
+    query: `
+      {
+        characters {
+          results {
+            id,
+            name,
+            image,
+          }
+        }
+      }
+    `,
+  });
+}
+
 export function getChacterById(id) {
   return axios.post(API_URL, {
     query: `
