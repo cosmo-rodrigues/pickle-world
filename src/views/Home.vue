@@ -93,6 +93,11 @@ export default {
       });
     }, 500);
   },
+  created() {
+    setInterval(() => {
+      this.increment();
+    }, 3000);
+  },
 };
 </script>
 <style>
